@@ -1,0 +1,20 @@
+/* KATAS */
+
+1.SQL left and right:
+SELECT LEFT(project,commits) AS project, RIGHT(address,contributors) AS address 
+FROM repositories 
+
+2.Easy SQL: Counting and Grouping:
+SELECT race, COUNT(race) AS count
+FROM demographics
+GROUP BY race
+ORDER BY count DESC;
+
+3.TRUNCATE:
+SELECT TRUNC(number1+number2) as towardzero
+FROM decimals;
+
+4. SQL with LOTR: ELVEN WILDCARDS:
+SELECT INITCAP(CONCAT(firstname,' ',lastname)) AS shortlist 
+FROM elves 
+WHERE firstname LIKE '%tegil%' OR lastname LIKE '%astar%'

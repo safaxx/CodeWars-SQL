@@ -1,10 +1,10 @@
-/* KATAS */
+/* ONLY THE KATAS NAMES ARE SPECIFIED NOT THE QUESIIONS */
 
-1.SQL left and right:
+1. SQL left and right:
 SELECT LEFT(project,commits) AS project, RIGHT(address,contributors) AS address 
 FROM repositories 
 
-2.Easy SQL: Counting and Grouping:
+2. Counting and Grouping:
 SELECT race, COUNT(race) AS count
 FROM demographics
 GROUP BY race
@@ -18,3 +18,18 @@ FROM decimals;
 SELECT INITCAP(CONCAT(firstname,' ',lastname)) AS shortlist 
 FROM elves 
 WHERE firstname LIKE '%tegil%' OR lastname LIKE '%astar%'
+
+5. SIMPLE NULL HANDLING 
+SELECT id, COALESCE(NULLIF(name,''), '[product name not found]') AS name,
+price, COALESCE(NULLIF(card_name,''), '[card name not found]') AS card_name,
+card_number, transaction_date
+FROM eusales
+WHERE price > 50.00
+
+6.SIMPLE CONCATINATING  
+SELECT CONCAT(prefix,' ',first,' ',last,' ',suffix) as title FROM names
+
+7. SIMPLE JOIN AND COUNT 
+SELECT p.*, COUNT(t.id) AS toy_count FROM
+people p JOIN toys t ON t.people_id = p.id
+GROUP BY p.id
